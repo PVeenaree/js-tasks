@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+    .container{
+        margin-top: 10%;
+        margin-left: auto;
+        margin-bottom: auto;
+        margin-right: auto;
+        border-style: solid;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .container .btn{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .container .btn-clear{
+        background-color: red;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+</style>
+<script>
+function multiply()
+{
+a = eval(f.n1.value)
+b = eval(f.n2.value)
+c = a*b
+f.n3.value = c
+
+}
+function divide()
+{
+    a = eval(f.n1.value)
+    b = eval(f.n2.value)
+    if(a>=b)
+    {
+        c =a/b 
+    }
+    else{
+        c= b/a 
+    }
+
+    f.n3.value =c
+}
+</script>
+
+</head>
+<body>
+<form  name = f>
+<table class="container">
+<tr>
+<td>
+    1st number
+</td>
+<td>
+<input type = text name  =n1>
+</td>
+</tr>
+<tr>
+<td>
+    2nd number
+</td>
+<td>
+<input type = text name = n2>
+</td>
+</tr>
+<tr>
+<td>
+Result
+</td>
+<td>
+<input type = text name = n3>
+</td>
+</tr>
+<tr>
+<td>
+<input class="btn" type = button value ="Multiply" onclick =multiply()>
+</td>
+<td>
+    <input class="btn" type="button" value="Divide" onclick=divide()>
+</td>
+<td>
+    <input class="btn-clear" type="reset" value="Clear">
+</td>
+</tr>
+</body>
+</html>
