@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Train Animation</title>
+  <style>
+    #train {
+      position: absolute;
+      width: 400px;
+      height: 200px;
+      background-image: url('train.jpg');
+      background-size: cover; 
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .buttons {
+      margin-top: 3%;
+      margin-left: 40%;
+    }
+    .b1{
+        height: 50px;
+        width: 100px;
+        font-weight: lighter;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-style: none;
+    }
+    .b2{
+        height: 50px;
+        width: 100px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-style: none;
+    }
+    .container-style{
+        margin-left: 40%;
+        padding-top: 5px;
+    }
+    .instruction{
+        font-size: largers;
+        color: blue;
+        margin-left: 30%;
+    margin-top:10%;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="container-style">Train Animation</h2>
+
+  <div class="container">
+    <div id="train"></div>
+  </div>
+  <div class="instruction" >
+    <h2>Click the following buttons to handle animation</h2>
+  </div>
+  <div class="buttons">
+    <button class="b1" onclick="startAnimation()">Start</button>
+    <button class="b2" onclick="stopAnimation()">Stop</button>
+  </div>
+
+  <script>
+    var train = document.getElementById('train');
+    var animationId;
+
+function startAnimation() {
+  var position = 0;
+  var speed = 2;
+
+  function moveTrain() {
+    position += speed;
+    train.style.left = position + 'px';
+
+    if (position >= window.innerWidth - train.offsetWidth) {
+      stopAnimation();
+    } else {
+      animationId = requestAnimationFrame(moveTrain);
+    }
+  }
+  animationId = requestAnimationFrame(moveTrain);
+}
+function stopAnimation() {
+  cancelAnimationFrame(animationId);
+}  
+  </script>
+</body>
+</html>
