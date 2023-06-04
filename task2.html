@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script></script>
+        <style>
+            .left{
+                position: absolute;
+                right: 1000px;
+                width: 300px;            
+            }
+            .center{
+                position: absolute;
+                right: 500px;
+                width: 300px;          
+            }
+            .right {
+                position: absolute;
+                right: 0px;
+                width: 300px;                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left">
+        <h2>Page 1</h2>
+        <a href="page2.html">Page2</a>
+        <form name="f" action="page2.html">
+            <input type="submit" value="Next">
+            </form>
+        </div>
+        <div class="center">
+            <h2>Page 2</h2>
+            <a href="page3.html">Page3</a>
+            <form name="f" action="page3.html">
+               <input type="submit" value="Next"> 
+            </form>
+        </div>
+        <div class="right">
+            <h2>Page 3</h2>
+            <a href="page2.html" >Page2</a>
+            <form name="f" action="page2.html">
+                <input type="submit" value="Previous">
+            </form>
+        </div>
+    </body>
+</html>
